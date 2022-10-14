@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+    <head>
+        <title>Dein Krisenratgeber</title>
+        <style>
+            body {
+                background-color: #fef4e8;
+                font-family:Arial, Helvetica, sans-serif;
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                overflow-x: hidden;        
+            }
+
+            header {
+                background-image: url("/img/bild5.png");
+                background-size: cover;
+                background-position: center;
+                box-shadow: gray 0 0 10px;
+                height: 85vh;
+                border-bottom-left-radius: 250% 600px;
+                border-bottom-right-radius:0;
+                margin-left: -2em;
+                padding-right: 2em;
+            }
+                
+            header div {
+                color: rgb(238, 199, 149);
+                font-size: 1.4vw;
+                padding-top: 35vh;
+                margin-left: auto;
+                margin-right: auto;
+                text-shadow: 0 0 3vw rgba(22, 30, 39, 1);
+                width: fit-content;
+            }
+
+            .section_name {
+                font-size: 2.2vw;
+            }
+
+            section {
+                background-color:#fef4e8;
+                height: 400px;
+            }
+
+            .SectionOne {
+                height: 40vh;
+                display: flex;
+                flex-direction: row;
+            }
+
+            .SectionOne audio {
+                margin-bottom: auto;
+                margin-top: auto;
+                margin-left: -8vw;
+                width: 35%;
+            }
+
+            .SectionOne h3 {
+                color: black;
+                padding: 0 3vw;
+            }
+
+            .SectionOne div {
+                /* padding: 50px; */
+                background-image: url("img/bild10.png");
+                background-size: cover;
+                box-shadow: gray 0 0 10px;
+                height: 16vw;
+                width: 16vw;
+                border-radius:  50% 50% 50% 50%/ 50% 50% 50% 50%;
+                margin-left: 100px; 
+            }
+
+            .SectionTwo {
+                height: 40vh;
+                display: flex;
+                flex-direction: row-reverse;
+            }
+
+            .SectionTwo video {
+                max-height: 70%;
+                max-width: 30vw;
+                margin-top: 5vh;
+                margin-bottom: auto;
+                box-shadow: 0 0 2vh rgba(0, 0, 0, 0.5);
+            }
+
+            .SectionTwo h3 {
+                color: #000;
+                text-align: center;
+                padding: 0 3vw;
+            }
+
+            .SectionTwo div {
+                background-image: url("img/bild6.png");
+                background-size: cover;
+                box-shadow: gray 0 0 10px;
+                height: 16vw;
+                width: 16vw;
+                border-radius:  50% 50% 50% 50%/ 50% 50% 50% 50%;
+                margin-right: 100px; 
+            }
+
+            .SectionThree h3 {
+                color: #000;
+                text-align: center;
+            }
+
+            .SectionThree {
+                margin-bottom: 2vh;
+                height: 50vh;
+            }
+
+            .SectionThree .quiz_div {
+                background-image: url("img/bild3.png");
+                padding: 10vh 20vw;
+                margin: auto;
+                background-size: cover;
+                box-shadow: gray 0 0 10px;
+                height: 25vh;
+                width: 20vw;
+                
+                border-radius: 20px;
+            }
+
+            .SectionThree .button {
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.5);
+                margin: auto;
+                display: block;
+                border-radius: 1vh;
+                font-size: 125%;
+                border: none;
+                padding: 1vh 1vw;
+                width: fit-content;
+                cursor: pointer;
+                color: white;
+
+                transition: 0.5s ease-in;
+                box-shadow: 0 0 0 0 rgb(0, 0, 0) inset;
+            }
+
+            .button:hover {
+                box-shadow: 200px 0 0 0 rgb(0, 0, 0) inset;
+                outline: none;
+            }
+
+            .SectionFour {
+                height: 60vh;
+            }
+
+            .SectionFour div {
+                background-color:#858585;
+                height: 100px;
+                box-shadow: gray 0 0 10px;
+                margin-top: 2vh;
+            }
+
+            .SectionFour div h3 {
+                color: white;
+                font-size: 200%;
+                text-align: center;
+                padding-top: 30px;
+            }
+
+            .SectionFour img{
+                width: 100%;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <header>
+                <div class="child">
+                    <h1>Dein Krisenratgeber</h1>
+                    <h2>Mit Power in die Zukunft</h2>
+                </div>  
+        </header>
+
+        <section class="SectionOne">
+            <div>
+            </div>
+            <h3 class="section_name">Podcast</h3>
+            <audio controls>
+                <source src="/aud/test_audio.mp3">
+            </audio>
+        </section>
+        
+        <section class="SectionTwo">
+            <div>
+            </div>
+            <h3 class="section_name">Video</h3>
+            <video controls>
+                <source src="/vid/test_video.mp4">
+            </video>
+        </section>
+        
+        <section class="SectionThree">
+            <div class="quiz_div">
+                <p>
+                    <h3 class="section_name">Quiz</h3>
+                </p>
+                
+                <div class="button" onclick="window.open('/quiz', '_self')">Loslegen</div>
+           </div>
+        </section>
+
+        <section class="SectionFour">
+            <div><h3>Mindmap</h3></div>
+            <img src="/img/mindmap3.png">
+        </section>
+    </body>

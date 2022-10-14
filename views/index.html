@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+    <head>
+        <title>Dein Krisenratgeber</title>
+        <style>
+            body {
+                background-color: white;
+                font-family:Arial, Helvetica, sans-serif;
+                padding: 0;
+                margin: 0;        
+            }
+
+            header {
+                background-color:#ff4646;
+                height: 700px;                
+            }
+
+            header svg {
+                margin-top: 50px;
+            }
+            
+            .container {
+                width: 100%;
+                height: 500px;
+                background: white;
+                margin: auto;
+                padding: 10px;    
+            }
+
+            .one {
+                width: 70%;
+                height: 650px;
+                background: rgba(51,51,51,255);
+                float: left;
+                clip-path: polygon(0 0, 100% 0, 100% -63%, 0 100%);
+            }
+
+            .one h1 {
+                color: white;
+                font-size: 40px;
+                margin-top: 70px;
+                margin-left: 35px;
+            }
+
+            .one h2{
+                color: white;
+                font-size: 29px;
+                margin-left: 35px;
+            }
+
+            .two {
+                background: linear-gradient(rgba(0,0,0,0.6), #ff4646ac), url("img/bild1.png");
+                background-attachment: fixed ;
+                background-repeat: no-repeat;
+                background-size: 1050px;
+                background-position: 7em;
+                margin-left: 10%;
+                height: 650px;
+                clip-path: polygon(100% -110%, 0 100%, 100% 100%);
+            }
+
+            .SectionOne {
+                background: linear-gradient(rgba(0,0,0,0.6), #ff4646ac), url("img/bild2.png");
+                height: 600px;
+                width: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+
+            audio {
+              position: absolute;
+              margin-left: 25vw;
+              width: 30vw;
+            }
+
+            .SectionOne h3 {
+                color: white;
+                position: absolute;
+                margin: -120px 0 0 100px;
+                font-size: 300%;
+            }
+
+            .SectionTwo {
+                background: linear-gradient(rgba(0,0,0,0.6), #ff4646ac), url("img/bild3.png");
+                height: 800px;
+                width: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                 
+            }
+
+            video {
+              position: absolute;
+              margin-left: 25vw;
+              width: 30vw;
+            }
+
+            .SectionTwo h3 {
+                color: white;
+                position: absolute;
+                margin: -150px 0 0 180px;
+                font-size: 300%;
+            }
+
+            .SectionThree {
+                background: linear-gradient(rgba(0,0,0,0.6), #ff464649), url("img/bild4.png");
+                height: 600px;
+                width: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: top;
+            }
+
+            .SectionThree h3 {
+                color: white;
+                position: absolute;
+                margin: -100px 0 0 220px;
+                font-size: 300%;
+            }
+
+            .SectionThree button {
+                background-color: #ff4646;
+                margin: auto;
+                display: block;
+                font-size: 200%;
+                border: none;
+                border-radius: 20px;
+                margin: -30px 0 0 200px;
+                color: white;
+                transition: 0.5s ease-in;
+                box-shadow: 0 0 0 0 #333333 inset;
+            }
+
+            .SectionThree a {
+                text-decoration: none;
+            }
+
+            .SectionThree button:hover {
+                box-shadow: 200px 0 0 0 #333333 inset;
+                outline: none;
+            }
+
+            .SectionFour {
+                background: linear-gradient(rgba(0,0,0,0.6), #ff464649), url("img/bild5.png");
+                height: 800px;
+                width: 100%;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position-y: center;
+            }
+
+            .SectionFour h3{
+                color: white;
+                position: absolute;
+                margin: 290px 0 0 50px;
+                font-size: 300%;
+            }
+
+            .SectionFour button {
+                background-color: #333333;
+                margin: auto;
+                display: block;
+                font-size: 200%;
+                border: none;
+                border-radius: 20px;
+                margin: 270px 0 0 1050px;
+
+                color: white;
+
+                transition: 0.5s ease-in;
+                box-shadow: 0 0 0 0 #ff4646 inset;
+            }
+
+            .SectionFour a {
+                text-decoration: none;
+            }
+
+            .SectionFour button:hover {
+                box-shadow: 200px 0 0 0 #ff4646 inset;
+                outline: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header class="container2">
+            <div class="one">
+                    <h1>Dein Krisenratgeber</h1>
+                    <h2>Mit Power in die Zukunft</h2>    
+            </div>
+            <div class="two"></div>
+                
+            </div>
+        </header>
+
+        <section class="SectionOne">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff4646" fill-opacity="1" d="M0,0L48,21.3C96,43,192,85,288,96C384,107,480,85,576,74.7C672,64,768,64,864,90.7C960,117,1056,171,1152,186.7C1248,203,1344,181,1392,170.7L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+          <p><h3>Podcast</h3></p>
+
+          
+          <audio controls>
+            <source src="/aud/test_audio.mp3">
+          </audio>
+
+        </section>
+        
+        <section class="SectionTwo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff4646" fill-opacity="1" d="M0,256L48,213.3C96,171,192,85,288,85.3C384,85,480,171,576,218.7C672,267,768,277,864,261.3C960,245,1056,203,1152,160C1248,117,1344,75,1392,53.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+            <p><h3>Video</h3></p>
+
+            
+            <video controls>
+              <source src="/vid/test_video.mp4">
+            </video>
+        </section>
+        
+        <section class="SectionThree">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff4646" fill-opacity="1" d="M0,288L48,256C96,224,192,160,288,149.3C384,139,480,181,576,213.3C672,245,768,267,864,234.7C960,203,1056,117,1152,106.7C1248,96,1344,160,1392,192L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+            <p><h3>Quiz</h3></p>
+            <a href="quiz">
+                <button style="padding: 0 1vw">
+                    <h4>Loslegen</h4>
+                </button>
+            </a>
+        </section>
+
+        <section class="SectionFour">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff4646" fill-opacity="1" d="M0,128L48,122.7C96,117,192,107,288,90.7C384,75,480,53,576,42.7C672,32,768,32,864,80C960,128,1056,224,1152,245.3C1248,267,1344,213,1392,186.7L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+            <p><h3>Mindmap</h3></p>
+            <a href="mindmap">
+                <button style="padding: 0 1vw">
+                    <h4>Öffnen</h4>
+                </button>
+            </a>
+        </section>
+    </body>
