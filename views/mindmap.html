@@ -19,6 +19,7 @@
             box-shadow: gray 0 0 10px;
             margin: 50px 50px 0 50px;
             border-radius: 20px;
+            position: relative;
         }
 
         header h1 {
@@ -29,21 +30,40 @@
 
         section {
             background-color: white;
-            height: 500px;
+            height: fit-content;
             margin: 20px 50px 50px 50px;
+            padding: 1vh 1vw;
             border-radius: 20px;
             box-shadow: gray 0 0 10px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        #back {
+            position: absolute;
+            left: 1vw;
+            top: -2.5vh;
+            color: white;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        #back:hover {
+            text-decoration: underline;
         }
 
     </style>
    </head>
 
    <body>
-    <header>
-        <h1>Die Mindmap</h1>
-    </header>
+       <header>
+            <div id="back" onclick="window.open('/..', '_self')">Startseite</div>
+            <h1>Die Mindmap</h1>
+        </header>
 
-    <section>
-
-    </section>
+        <section>
+            <img src="/img/mindmap3.png">
+        </section>
    </body>

@@ -22,6 +22,7 @@
         margin: 50px 50px 0 50px;
         border-radius: 20px;
         background-attachment: fixed;
+        position: relative;
     }
 
     .circle1 {
@@ -133,10 +134,23 @@
 
     section {
         background-color: white;
-        height: 1000px;
+        height: fit-content;
         margin: 20px 50px 50px 50px;
         border-radius: 20px;
         box-shadow: gray 0 0 10px;
+    }
+
+    #back {
+        position: absolute;
+        left: 1vw;
+        top: -2.5vh;
+        color: white;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    #back:hover {
+        text-decoration: underline;
     }
 
     </style>
@@ -145,6 +159,7 @@
 <body>
     <div>
         <header>
+            <div id="back" onclick="window.open('/..', '_self')">Startseite</div>
             <div class="circle1">
                 <h1>Das Quiz</h1>
             </div>
@@ -168,6 +183,90 @@
     </div>
     
    <section>
-         
+        <div class="questions">
+            <h2 class="question">Was ist deine Lieblings-Antwort?</h2>
+            <div class="answers">
+                <p class="answer"><input class="input" type="radio" name="quiz1">Antwort 1</p>
+                <p class="answer"><input class="input" type="radio" name="quiz1">Antwort 2</p>
+                <p class="answer"><input class="input" type="radio" name="quiz1">Antwort 3</p>
+            </div>
+            <h2 class="question">Was ist deine Lieblings-Antwort?</h2>
+            <div class="answers">
+                <p class="answer"><input class="input" type="radio" name="quiz2">Antwort 1</p>
+                <p class="answer"><input class="input" type="radio" name="quiz2">Antwort 2</p>
+                <p class="answer"><input class="input" type="radio" name="quiz2">Antwort 3</p>
+            </div>
+            <h2 class="question">Was ist deine Lieblings-Antwort?</h2>
+            <div class="answers">
+                <p class="answer"><input class="input" type="radio" name="quiz3">Antwort 1</p>
+                <p class="answer"><input class="input" type="radio" name="quiz3">Antwort 2</p>
+                <p class="answer"><input class="input" type="radio" name="quiz3">Antwort 3</p>
+            </div>
+            <h2 class="question">Was ist deine Lieblings-Antwort?</h2>
+            <div class="answers">
+                <p class="answer"><input class="input" type="radio" name="quiz4">Antwort 1</p>
+                <p class="answer"><input class="input" type="radio" name="quiz4">Antwort 2</p>
+                <p class="answer"><input class="input" type="radio" name="quiz4">Antwort 3</p>
+            </div>
+            <h2 class="question">Was ist deine Lieblings-Antwort?</h2>
+            <div class="answers">
+                <p class="answer"><input class="input" type="radio" name="quiz5">Antwort 1</p>
+                <p class="answer"><input class="input" type="radio" name="quiz5">Antwort 2</p>
+                <p class="answer"><input class="input" type="radio" name="quiz5">Antwort 3</p>
+            </div>
+        </div>
+        <div class="ergebnis-button">
+            <div>Ergebnis</div>
+        </div>
    </section>
+
+   <script>
+   </script>
+
+   <style>
+        .ergebnis-button {
+            height: 6vh;
+            width: 8vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            cursor: pointer;
+            border-radius: 1vh;
+            margin: 3vh 0;
+            font-weight: bold;
+            background-color: #ddd;
+        }
+        
+        .ergebnis-button:hover {
+            background-color: red;
+            
+        }
+        
+        .ergebnis-button:active {
+            background-color: #111;
+            color: red
+            
+        }
+
+        .questions {
+            height: fit-content;
+            width: fit-content;
+        }
+
+        .question {
+            margin: 5vh 0 1.6vh 0;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 5vh;
+        }
+
+        .input {
+            height: 200%;
+        }
+   </style>
 </body>
