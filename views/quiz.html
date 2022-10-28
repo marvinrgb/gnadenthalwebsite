@@ -184,7 +184,7 @@
     
    <section>
         <div class="questions">
-            <h2 class="question">Was ist deine Lieblings-Antwort?</h2>
+            <!-- <h2 class="question">Was ist deine Lieblings-Antwort?</h2>
             <div class="answers">
                 <p class="answer"><input class="input" type="radio" name="quiz1">Antwort 1</p>
                 <p class="answer"><input class="input" type="radio" name="quiz1">Antwort 2</p>
@@ -213,14 +213,177 @@
                 <p class="answer"><input class="input" type="radio" name="quiz5">Antwort 1</p>
                 <p class="answer"><input class="input" type="radio" name="quiz5">Antwort 2</p>
                 <p class="answer"><input class="input" type="radio" name="quiz5">Antwort 3</p>
+            </div> -->
+            <h2 id="question-head"></h2>
+            <div id="answers-div" class="answers" style="display: none;">
+                <p class="answer"><input class="input" type="radio" name="quiz4"></p>
+                <p class="answer"><input class="input" type="radio" name="quiz4"></p>
+                <p class="answer"><input class="input" type="radio" name="quiz4"></p>
             </div>
         </div>
-        <div class="ergebnis-button">
-            <div>Ergebnis</div>
+        <div class="ergebnis-button" onclick="quizButton()">
+            <div>Start</div>
         </div>
    </section>
 
    <script>
+
+    const questions = [
+        "Eine gute Freundin / Ein guter Freund ruft dich an und fragt, ob du mit ihm/ihr am Samstagabend essen gehen möchtest. Du sagst zu. In der Vergangenheit hat sie dir bereits öfter kurzfristig abgesagt. Was denkst du nachdem das Telefonat beendet ist? ",
+        "Deine Vorgesetzte / Dein Vorgesetzter sendet dir per E-Mail eine Einladung zu einem Termin am nächsten Morgen um 8:00 Uhr mit dem Titel „Besprechung“. Du weißt nicht, worum es geht, da die E-Mail keine weiteren Informationen beinhaltet und er in der Abteilungs-Besprechung am heutigen Tag auch nichts diesbezüglich erwähnt hat. Wie reagierst du? ",
+        "Du erinnerst dich an den zweiten, Covid-19 begründeten, Lockdown zurück. Wie hast du dich in dieser Zeit gefühlt? ",
+        "Beim Fußball-Training, zwei Wochen vor dem wichtigsten Spiel der Saison, versetzt sich einer der besten Spieler / der besten Spielerinnen eurer Mannschaft. Er / Sie knickt beim Laufen um und kann das Bein danach vor Schmerzen kaum noch belasten. Ein anderes Mannschaftsmitglied fährt ihn / sie ins Krankenhaus. Wie würdest du deine Gedanken beschreiben? ",
+        "Täglich wird in den Nachrichten von der Klima-Erwärmung und deren verheerenden Folgen berichtet. Wie schätzt du die Lebensqualität der Menschen in den nächsten Jahrzehnten ein. "
+    ]
+
+    const answers = [
+        [
+            {
+                "text" : "Ich freue mich auf das Abendessen am Samstag. Das wird bestimmt ein schöner Abend.",
+                "value" : "a"
+            },
+            {
+                "text" : "Ich denke darüber nach, ob sie / er mir auch dieses Mal wieder absagen wird. Die Freude auf das Essen überwiegt jedoch.",
+                "value" : "b"
+            },
+            {
+                "text" : "Sie / Er hat mir jetzt schon so oft abgesagt… Meine Kollegin sendet mir direkt nach dem Telefonat eine Nachricht mit einer Einladung zu ihrer Geburtstagsfeier am Samstag. Ich sage ihr zu, da ich davon ausgehe, dass das Treffen auch diesmal nicht stattfinden wird.",
+                "value" : "c"
+            }
+        ],
+        [
+            {
+                text : "Ich überprüfe meine Terminkalender und nehme den Termin für Besprechung an. Morgen früh werde ich erfahren, über was sie / er mit mir sprechen möchte.",
+                value : "a"
+            },
+            {
+                text : "Ich nehme den Termin an, mache mir aber sofort Gedanken, weshalb sie / er nicht gesagt hat, worüber sie / er mit mir sprechen möchte. ",
+                value : "b"
+            },
+            {
+                text : "Auch wenn mir nichts einfällt, was ich falsch gemacht haben könnte, habe ich direkt die Vermutung, dass das Gespräch nicht positiv verlaufen wird. Nicht umsonst lädt sie / er so kurzfristig zu einem Termin ein. Beim Bestätigen des Termins werde ich nervös und stelle mich auf das Schlimmste ein.",
+                value : "c"
+            }
+        ],
+        [
+            {
+                text : "Ich habe es vermisst, meine Freunde und meine Familie zu treffen. Aus diesem Grund habe wir regelmäßig Online-Spieleabende und Online-Dinnerpartys organisiert. Das war zwar nicht dasselbe, aber immerhin eine tolle Alternative.",
+                value : "a"
+            },
+            {
+                text : "Ich habe mich oft gefragt, wie lange dieser „Zustand“ anhalten wird. Genauso lange wie der Erste oder vielleicht sogar noch länger? Beim Telefonieren mit Freunden und Verwandten habe ich diese Sorgen häufig mit ihnen geteilt.",
+                value : "b"
+            },
+            {
+                text : "Ich habe mich darauf eingestellt, dass mir noch eine längere Zeit ohne persönlichen Kontakt zu meinen Freunden und meiner Familie bevorstehen würde. Außerdem war ich mir sicher, dass das nicht der letzte Lockdown sein würde.",
+                value : "c"
+            }
+        ],
+        [
+            {
+                text : "Ich drücke ihm / ihr die Daumen, dass es ihm / ihr schnell wieder gut geht. Unser Trainer wird eine gute Lösung für die Aufstellung der Mannschaft finden und wir werden das Spiel in zwei Wochen gemeinsam trotzdem gut meistern!",
+                value : "a"
+            },
+            {
+                text : "Hoffentlich geht es ihm / ihr bald wieder gut! Auch im Hinblick auf das Spiel habe ich starke Bedenken. Er / Sie ist eines der wichtigsten Mitglieder unserer Mannschaft, schließlich hat er / sie in dieser Saison die meisten Tore geschossen.",
+                value : "b"
+            },
+            {
+                text : "Ich wünsche ihm / ihr eine gute Besserung! Nach diesem Vorfall werden wir das Spiel in zwei Wochen nicht mehr gewinnen können. Da bin ich mir sicher.",
+                value : "c"
+            }
+        ],
+        [
+            {
+                text : "Es wird ständig berichtet, dass das Leben der Menschen durch Einschränkungen und Verzicht geprägt sein wird. Ich denke, dass diese negative Bewertung nicht richtig ist. Die Menschen werden vielleicht nicht mehr genauso leben können, wie sie es jetzt tun, aber das heißt nicht, dass das Leben schlechter sein wird. Immerhin sind unseren aktuellen Lebensgewohnheiten, verglichen mit denen vor zwanzig Jahren, auch ganz andere.",
+                value : "a"
+            },
+            {
+                text : "Die Menschen werden sich umstellen müssen. Ob man die Folgen der Klima-Erwärmung noch abmildern kann, weiß ich nicht. Ich stelle mir das schwierig vor.",
+                value : "b"
+            },
+            {
+                text : "Der Klimawandel ist eine Katastrophe und nimmt vielen Menschen und Tieren den Lebensraum. In den nächsten Jahrzehnten werden die Menschen vor großen Herausforderungen stehen, die nicht zu meistern sind.",
+                value : "c"
+            }
+        ]
+    ]
+
+
+    let quiz_state = 0;
+
+    let answer_elements = document.getElementsByClassName('answer');
+
+    let question_element = document.getElementById('question-head');
+
+    let count_answers = {
+        "a" : 0,
+        "b" : 0,
+        "c" : 0
+    }
+
+    let lebensmottos = {
+        a : "<strong>„Probleme sind verschiedene Möglichkeiten.“ – Henry Ford</strong><br>Du lässt dir deine positive Einstellung nicht nehmen und versuchst aus jeder Situation das Beste zu machen. Deine zuversichtliche Art hilft dir hierbei.",
+        b : "<strong>Vorsicht ist besser als Nachsicht! </strong><br>Du gehst gern auf „Nummer sicher“ und unüberlegtes Handeln liegt dir nicht. Dadurch vermeidest du oft Fehler. Lass dich aber nicht zu sehr von möglichen Gefahren leiten, sonst könntest du viele schöne Momente verpassen.",
+        c : "<strong>Die größten Enttäuschungen haben ihren Ursprung in zu großen Erwartungen.</strong><br>Die Grundlage deiner Erwartungen an deine Mitmenschen und deine Umgebung, wird durch die negativen Erfahrungen, die du gemacht hast, gebildet. So kannst du nur selten enttäuscht werden und das wiederum gefällt dir gut. Gib deinem Umfeld doch vielleicht hin und wieder eine Chance, dich positiv zu überraschen."
+    }
+
+    function quizButton() {
+
+        let any_button_checked = false;
+        if (quiz_state > 0) {
+            for (let i = 0; i < answer_elements.length; i++) {
+                
+            }
+        }
+
+
+        if (quiz_state > 0) {
+            for (let i = 0; i < answer_elements.length; i++) {
+                console.log(answer_elements[i].firstChild.value)
+                if (answer_elements[i].firstChild.checked) {
+                    count_answers[answer_elements[i].firstChild.value]++;
+                    console.log(count_answers)
+                }
+            }
+        }
+
+
+        if (quiz_state >= 0 && quiz_state < 5) {
+            question_element.innerHTML = questions[quiz_state];
+
+            for (let i = 0; i < answer_elements.length; i++) {
+                answer_elements[i].innerHTML = `<input class="input" type="radio" name="quiz4" value="${answers[quiz_state][i].value}">` + answers[quiz_state][i].text;
+            }
+            document.getElementById('answers-div').style.display = "block";
+
+            quiz_state++;
+
+        } else if (quiz_state == 5) {
+
+            let max = "a"
+
+            max = count_answers.b > count_answers[max] ? "b" : max
+
+            max = count_answers.c > count_answers[max] ? "c" : max
+
+            let answer_div = document.getElementById('answers-div')
+
+            answer_div.innerHTML = lebensmottos[max]
+
+            question_element.innerHTML = "Das ist dein persönliches Lebensmotto:"
+
+            document.getElementsByClassName('ergebnis-button')[0].style.display = 'none'
+
+            quiz_state++;
+        }
+
+
+    }
+
+    // function fillQuestionAndAnswers(quiz_state)
+
+
    </script>
 
    <style>
@@ -251,11 +414,11 @@
 
         .questions {
             height: fit-content;
-            width: fit-content;
+            max-width: 50%;
         }
 
-        .question {
-            margin: 5vh 0 1.6vh 0;
+        #question-head {
+            padding-bottom: 2vh;
         }
 
         section {
