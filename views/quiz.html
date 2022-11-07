@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <head>
-    <style>
+    <style> 
+    :root {
+        --mainred: #e50043 /*#e50043*/;
+    }
     body {
         font-family: Arial, Helvetica, sans-serif;
         padding: 0;
         margin: 0;
         background: #c31432;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to top, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to top, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+        background: -webkit-linear-gradient(to top, #000, var(--mainred));  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #000, var(--mainred)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         background-size: contain;
     }
 
     header {
         height: 600px;
-        background: linear-gradient(rgba(0,0,0,0.6), #ff353544), url("/img/bild6.jpg");
+        background: linear-gradient(rgba(0,0,0,0.6), #e5004344), url("/img/bild6.jpg");
         background-size: cover;
         background-position: -3em;
         background-repeat: no-repeat;
@@ -36,7 +38,7 @@
     }
     
     .circle1 h1 {
-        color: #ff4646;
+        color: var(--mainred);
         text-align: center;
         margin-top: 40%;
         font-size: 250%;
@@ -53,7 +55,7 @@
     }
 
     .circle2 h2 {
-        color: #ff4646;
+        color: var(--mainred);
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         text-align: center;
         margin-top: 15%;
@@ -71,7 +73,7 @@
     }
     
     .circle3 h3 {
-        color: #ff4646;
+        color: var(--mainred);
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         text-align: center;
         margin-top: 15%;
@@ -89,7 +91,7 @@
     }
 
     .circle4 h4 {
-        color: #ff4646;
+        color: var(--mainred);
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         text-align: center;
         margin-top: 20%;
@@ -107,7 +109,7 @@
     }
 
     .circle5 h2 {
-        color: #ff4646;
+        color: var(--mainred);
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         text-align: center;
         margin-top: 15%;
@@ -125,7 +127,7 @@
     }
 
     .circle6 h2 {
-        color: #ff4646;
+        color: var(--mainred);
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         text-align: center;
         margin-top: 15%;
@@ -215,14 +217,14 @@
                 <p class="answer"><input class="input" type="radio" name="quiz5">Antwort 3</p>
             </div> -->
             <h2 id="question-head"></h2>
-            <div id="answers-div" class="answers" style="display: none;">
+            <div id="answers-div" class="answers" style="display: none; line-height: 120%;">
                 <p class="answer"><input class="input" type="radio" name="quiz4"></p>
                 <p class="answer"><input class="input" type="radio" name="quiz4"></p>
                 <p class="answer"><input class="input" type="radio" name="quiz4"></p>
             </div>
         </div>
         <div class="ergebnis-button" onclick="quizButton()">
-            <div>Start</div>
+            <div id="staaart">Start</div>
         </div>
    </section>
 
@@ -343,7 +345,7 @@
                 console.log(answer_elements[i].firstChild.value)
                 if (answer_elements[i].firstChild.checked) {
                     count_answers[answer_elements[i].firstChild.value]++;
-                    console.log(count_answers)
+                    // console.log(count_answers)
                 }
             }
         }
@@ -356,7 +358,7 @@
                 answer_elements[i].innerHTML = `<input class="input" type="radio" name="quiz4" value="${answers[quiz_state][i].value}">` + answers[quiz_state][i].text;
             }
             document.getElementById('answers-div').style.display = "block";
-
+            document.getElementById('staaart').innerHTML = 'Weiter'
             quiz_state++;
 
         } else if (quiz_state == 5) {
