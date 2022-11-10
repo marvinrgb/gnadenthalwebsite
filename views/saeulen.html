@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+   <head>
+    <style>
+        :root {
+            --mainred: #e50043 /*#e50043*/;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0;
+            margin: 0;
+            background: #c31432;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to top, #000, var(--mainred));  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to top, #000, var(--mainred)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            background-size: cover;
+        }
+
+        header {
+            background-color: white;
+            height: 100px;
+            background-repeat: no-repeat;
+            box-shadow: gray 0 0 10px;
+            margin: 50px 50px 0 50px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        header h1 {
+            position: absolute;
+            margin: 30px 0 0 37.5%;
+            color: var(--mainred);
+        }
+
+        section {
+            background-color: white;
+            height: fit-content;
+            margin: 20px 50px 50px 50px;
+            padding: 1vh 1vw;
+            border-radius: 20px;
+            box-shadow: gray 0 0 10px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        #back {
+            position: absolute;
+            left: 1vw;
+            top: -2.5vh;
+            color: white;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        #back:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+   </head>
+
+   <body>
+       <!-- <header>
+            <div id="back" onclick="window.open('/..', '_self')">Startseite</div>
+            <h1>Wege aus der Krise</h1>
+        </header> -->
+
+        <section>
+            <img src="/img/saeulen.png">
+        </section>
+
+        <section>
+          <ol>
+            <li><strong>Optimistisch sein</strong><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga magni cumque nostrum praesentium maxime asperiores hic dignissimos eligendi. Accusantium officia esse et doloribus aperiam velit dolores? Asperiores veritatis fuga provident.</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ol>
+
+          <style>
+            ol li {
+              margin: 1.5vh 0;
+            }
+
+            ol {
+              padding: 0 15vw;
+            }
+          </style>
+
+        </section>
+   </body>

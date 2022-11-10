@@ -23,6 +23,15 @@ app.get('/mindmap', (req, res) => {
   }
 })
 
+app.get('/saeulen', (req, res) => {
+  try {
+    res.status(200).sendFile(__dirname + '/views/saeulen.html');
+  } catch (error) {
+    console.log(error);
+    res.status(500);
+  }
+})
+
 
 app.listen(port, () => {
   console.log(`Listening on Port ${port}`)
