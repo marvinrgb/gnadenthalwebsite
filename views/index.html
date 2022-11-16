@@ -16,7 +16,8 @@
                 background-color: white;
                 font-family:Arial, Helvetica, sans-serif;
                 padding: 0;
-                margin: 0;        
+                margin: 0;
+                position: relative;       
             }
 
             header {
@@ -94,6 +95,13 @@
             @keyframes a1 { to { height: var(--min-height);}
             }
             @keyframes a2 { to { transform: scale(1, var(--scale-min));}
+            }
+
+            .powerline {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                z-index: 5;
             }
             
 
@@ -205,6 +213,8 @@
                 background-size: 100%;
                 background-repeat: no-repeat;
                 background-position-y: center;
+                background-attachment: fixed;
+                background-position: top;
             }
 
             .SectionFour h3{
@@ -244,18 +254,20 @@
                 background-size: 100%;
                 background-repeat: no-repeat;
                 background-position-y: center;
+                background-attachment: fixed;
+                background-position: top;
             }
 
             .SectionFive h3{
                 color: white;
                 position: absolute;
-                margin: 0 0 0 10vw;
+                margin: -10vh 0 0 10vw;
                 font-size: 300%;
             }
 
             .SectionFive button {
                 background-color: #333333;
-                margin: 10% 0 0 15vw;
+                margin: 0vw 0 0 15vw;
                 display: block;
                 font-size: 200%;
                 border: none;
@@ -342,6 +354,13 @@
             .pause {
                 background-image: url('/img/pause_button.png');
             }
+
+            #audio-marker {
+                width: 2px;
+                height: 10px;
+                background-color: #666;
+                margin: 0 0 0 59%;
+            }
     </style>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -377,6 +396,7 @@
             <div class="player-controls scrubber">
               <p></p>
               <span id="seek-obj-container">
+                <div id="audio-marker"></div>
                 <progress id="seek-obj" value="0" max="1"></progress>
               </span>
               <small style="float: left; position: relative; left: 15px;" id="start-time"></small>
@@ -427,7 +447,7 @@
             </a>
         </section>
 
-
+        <img src="/img/powerline.png" class="powerline">
 
 
 
